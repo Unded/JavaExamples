@@ -35,20 +35,20 @@ public class SimpleDemo {
         System.out.println("Available threads: " + availableThreads);
         System.out.println("Running threads");
 
-//        executorService.execute(new ExecutorThread(latch1, "A"));
-//        executorService.execute(new ExecutorThread(latch2, "B"));
-//        executorService.execute(new ExecutorThread(latch3, "C"));
-//        executorService.execute(new ExecutorThread(latch4, "D"));
-//        try {
-//            //Если создать только одну переменную CountDownLatch
-//            //то главный поток закончится раньше созданных
-//            latch1.await();
-//            latch2.await();
-//            latch3.await();
-//            latch4.await();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        executorService.execute(new ExecutorThread(latch1, "A"));
+        executorService.execute(new ExecutorThread(latch2, "B"));
+        executorService.execute(new ExecutorThread(latch3, "C"));
+        executorService.execute(new ExecutorThread(latch4, "D"));
+        try {
+            //Если создать только одну переменную CountDownLatch
+            //то главный поток закончится раньше созданных
+            latch1.await();
+            latch2.await();
+            latch3.await();
+            latch4.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         executorService.shutdown();
         System.out.println("Finishing threads");
