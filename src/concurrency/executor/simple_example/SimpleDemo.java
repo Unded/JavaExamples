@@ -27,9 +27,8 @@ public class SimpleDemo {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
+
             e.printStackTrace();
-
-
         }
 
         // Print some info
